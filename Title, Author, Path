@@ -48,7 +48,7 @@ public class ReadWebPageTxt
            {
             System.out.println(line.substring(line.lastIndexOf("\">")+2,line.lastIndexOf("<"))); //from these lines need from > to </
            }
-        }
+       }
          
-        }
+    }
 }
