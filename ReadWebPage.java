@@ -14,6 +14,10 @@ public class ReadWebPage
       
       int num = 0;     //Used to change the page
       
+      FileOutputStream fos = new FileOutputStream("recipeDoc.csv", true);
+      PrintWriter pw3 = new PrintWriter(fos);
+      pw3.println("Author, Path, Name, Servings, Ingredients, Instructions \n");
+      
       //Loops through to read and capture the first two pages
       for(int start = 0; start < 4; start++)
       {
@@ -96,10 +100,14 @@ public class ReadWebPage
                      line2 = line2.replace("</title>", "");
                      line2 = line2.replace("| Sur La Table", "");
                      title = line2;
+                     title = title.replace("\n", "");
+                     title = title.replace(",", "");
                   }
                   else if(line2.indexOf(authorKey) != -1)
                   {
                      author = s2.nextLine(); //save the author as a string variable
+                     author = author.replace("\n", "");
+                     author = author.replace(",", "");
                   }
                   else if(line2.indexOf(pathKey) != -1)
                   {
@@ -134,6 +142,9 @@ public class ReadWebPage
                      servings = servings.replace("&#224;","à");
                      servings = servings.replace("&#34;","");
                      servings = servings.replace("&#8539;",".125");
+                     
+                     servings = servings.replace("\n", "");
+                     servings = servings.replace(",", "");
                   }
                   //if we find thumb, that means there is an important link
                   else if(line2.indexOf(ingredientstart)!=-1)
@@ -170,6 +181,9 @@ public class ReadWebPage
                      ingredients = ingredients.replace("&#224;","à");
                      ingredients = ingredients.replace("&#34;","");
                      ingredients = ingredients.replace("&#8539;",".125");
+                     
+                     ingredients = ingredients.replace("\n", "");
+                     ingredients = ingredients.replace(",", "");
                   }  
                   //Checks if the line contains the keyword procedure
                   else if(line2.indexOf(keyProcedure) != -1)
@@ -204,32 +218,32 @@ public class ReadWebPage
                      procedure = procedure.replace("&#224;","à");
                      procedure = procedure.replace("&#34;","");
                      procedure = procedure.replace("&#8539;",".125");
+                     
+                     procedure = procedure.replace("\n", "");
+                     procedure = procedure.replace(",", "");
                   }
                }
-               //Prints out the servings and procedure
-               //instead of print statements write to CSV file?
-               System.out.println("Title: "+title);
-               System.out.print("Path: ");
+               pw3.print(author + ",");
                for(int i = 0; i < path.size(); i++)
                {
-                  System.out.print(path.get(i) + "/");
+                  pw3.print(path.get(i) + "/");
                }
-               System.out.println();
-               System.out.println("Link: "+link);
-               System.out.println("Author: "+author);
-               System.out.println("Servings: "+servings);
-               System.out.println("Ingredients: "+ingredients);
-               System.out.println("Procedure: "+procedure);
+               pw3.print(","+title);
+               pw3.print(","+servings);
+               pw3.print(","+ingredients);
+               pw3.print(","+procedure);
+               pw3.print("\n");
                
-               Thread.sleep(20000);
+               Thread.sleep(15000);
                pw2.close();
             }
          }
          //Increments num by 24 to go to next page (as observed in the website url)
          num = num + 24;
          
-         Thread.sleep(20000);
+         Thread.sleep(15000);
          pw.close();
       }
+      pw3.close();
    }
 }
