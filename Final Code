@@ -14,7 +14,7 @@ public class ReadWebPage
       
       int num = 0;     //Used to change the page
       
-      FileOutputStream fos = new FileOutputStream("recipeFinalDoc.csv", true);
+      FileOutputStream fos = new FileOutputStream("recipeOutput.csv", true);
       PrintWriter pw3 = new PrintWriter(fos);
       pw3.println("Author, Path, Name, Servings, Ingredients, Instructions \n");
       
@@ -102,6 +102,9 @@ public class ReadWebPage
                      title = line2;
                      title = title.replace("\n", "");
                      title = title.replace(",", "");
+                     title = title.replace("&#8217;","'");
+                     title = title.replace("&#38;", "&");
+                     title = title.replace("&#233;","é");
                   }
                   else if(line2.indexOf(authorKey) != -1)
                   {
@@ -146,6 +149,21 @@ public class ReadWebPage
                      
                      author = author.replace("\n", "");
                      author = author.replace(",", "");
+                     //new hex code
+                     author = author.replace("&rsquo;","'");
+                     author = author.replace("&copy;","©");
+                     author = author.replace("&eacute;", "e");
+                     author = author.replace("&reg;","®");
+                     author = author.replace("&#8220;","“");
+                     author = author.replace("&#233;","e");
+                     author = author.replace("&#8217;", "’");
+                     author = author.replace("&#38;", "&");
+                     author = author.replace("&#8482;","™");
+                     author = author.replace("&#241;","ñ");
+ 
+                     //one recipe has a link that kinda messes up the ingredients section (pumpkin pie w merangine)
+                     
+                     
                   }
                   else if(line2.indexOf(pathKey) != -1)
                   {
@@ -201,6 +219,17 @@ public class ReadWebPage
                      
                      servings = servings.replace("\n", "");
                      servings = servings.replace(",", "");
+                     
+                     servings = servings.replace("&rsquo;","'");
+                     servings = servings.replace("&copy;","©");
+                     servings = servings.replace("&eacute;", "e");
+                     servings = servings.replace("&reg;","®");
+                     servings = servings.replace("&#8220;","“");
+                     servings = servings.replace("&#233;","e");
+                     servings = servings.replace("&#8217;", "’");
+                     servings = servings.replace("&#38;", "&");
+                     servings = servings.replace("&#8482;","™");
+                     servings = servings.replace("&#241;","ñ");
                   }
                   //if we find thumb, that means there is an important link
                   else if(line2.indexOf(ingredientstart)!=-1)
@@ -258,6 +287,17 @@ public class ReadWebPage
                      
                      ingredients = ingredients.replace("\n", "");
                      ingredients = ingredients.replace(",", "");
+                     
+                     ingredients = ingredients.replace("&rsquo;","'");
+                     ingredients = ingredients.replace("&copy;","©");
+                     ingredients = ingredients.replace("&eacute;", "e");
+                     ingredients = ingredients.replace("&reg;","®");
+                     ingredients = ingredients.replace("&#8220;","“");
+                     ingredients = ingredients.replace("&#233;","e");
+                     ingredients = ingredients.replace("&#8217;", "’");
+                     ingredients = ingredients.replace("&#38;", "&");
+                     ingredients = ingredients.replace("&#8482;","™");
+                     ingredients = ingredients.replace("&#241;","ñ");
                   }  
                   //Checks if the line contains the keyword procedure
                   else if(line2.indexOf(keyProcedure) != -1)
@@ -313,6 +353,17 @@ public class ReadWebPage
                      
                      procedure = procedure.replace("\n", "");
                      procedure = procedure.replace(",", "");
+                     
+                     procedure = procedure.replace("&rsquo;","'");
+                     procedure = procedure.replace("&copy;","©");
+                     procedure = procedure.replace("&eacute;", "e");
+                     procedure = procedure.replace("&reg;","®");
+                     procedure = procedure.replace("&#8220;","“");
+                     procedure = procedure.replace("&#233;","e");
+                     procedure = procedure.replace("&#8217;", "’");
+                     procedure = procedure.replace("&#38;", "&");
+                     procedure = procedure.replace("&#8482;","™");
+                     procedure = procedure.replace("&#241;","ñ");
                   }
                }
                pw3.print(author + ",");
@@ -358,6 +409,19 @@ public class ReadWebPage
                      
                      path.set(i, path.get(i).replace("\n", ""));
                      path.set(i, path.get(i).replace(",", ""));
+                     
+                      path.set(i, path.get(i).replace("&rsquo;","'"));
+                      path.set(i, path.get(i).replace("&copy;","©"));
+                      path.set(i, path.get(i).replace("&eacute;", "e"));
+                      path.set(i, path.get(i).replace("&reg;","®"));
+                      path.set(i, path.get(i).replace("&#8220;","“"));
+                      path.set(i, path.get(i).replace("&#233;","e"));
+                      path.set(i, path.get(i).replace("&#8217;", "’"));
+                      path.set(i, path.get(i).replace("&#38;", "&"));
+                      path.set(i, path.get(i).replace("&#8482;","™"));
+                      path.set(i, path.get(i).replace("&#241;","ñ"));
+                     
+
                   pw3.print(path.get(i) + "/");
                }
                pw3.print(","+title);
