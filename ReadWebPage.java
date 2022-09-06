@@ -14,7 +14,7 @@ public class ReadWebPage
       
       int num = 0;     //Used to change the page
       
-      FileOutputStream fos = new FileOutputStream("recipeDoc.csv", true);
+      FileOutputStream fos = new FileOutputStream("recipeOutput.csv", true);
       PrintWriter pw3 = new PrintWriter(fos);
       pw3.println("Author, Path, Name, Servings, Ingredients, Instructions \n");
       
@@ -142,10 +142,24 @@ public class ReadWebPage
                      author = author.replace("</il>","");
                      author = author.replace("</li>","");
                      author = author.replace("&#174;","®");
-                     author = author.replace("&amp","&");
+                     author = author.replace("&amp;","&");
                      
                      author = author.replace("\n", "");
                      author = author.replace(",", "");
+                     //new hex code
+                     author = author.replace("&rsquo;","'");
+                     author = author.replace("&copy;","©");
+                     author = author.replace("&eacute;", "e");
+                     author = author.replace("&reg;","®");
+                     author = author.replace("&#8220;","“");
+                     author = author.replace("&#233;","e");
+                     author = author.replace("&#8217;", "’");
+                     author = author.replace("&#38;", "&");
+                     author = author.replace("&#8482;","™");
+                     author = author.replace("&#241;","ñ");
+                     //one recipe has a link that kinda messes up the ingredients section (pumpkin pie w merangine)
+                     
+                     
                   }
                   else if(line2.indexOf(pathKey) != -1)
                   {
@@ -197,10 +211,21 @@ public class ReadWebPage
                      servings = servings.replace("</il>","");
                      servings = servings.replace("</li>","");
                      servings = servings.replace("&#174;","®");
-                     servings = servings.replace("&amp","&");
+                     servings = servings.replace("&amp;","&");
                      
                      servings = servings.replace("\n", "");
                      servings = servings.replace(",", "");
+                     
+                     servings = servings.replace("&rsquo;","'");
+                     servings = servings.replace("&copy;","©");
+                     servings = servings.replace("&eacute;", "e");
+                     servings = servings.replace("&reg;","®");
+                     servings = servings.replace("&#8220;","“");
+                     servings = servings.replace("&#233;","e");
+                     servings = servings.replace("&#8217;", "’");
+                     servings = servings.replace("&#38;", "&");
+                     servings = servings.replace("&#8482;","™");
+                     servings = servings.replace("&#241;","ñ");
                   }
                   //if we find thumb, that means there is an important link
                   else if(line2.indexOf(ingredientstart)!=-1)
@@ -254,10 +279,21 @@ public class ReadWebPage
                      ingredients = ingredients.replace("</il>","");
                      ingredients = ingredients.replace("</li>","");
                      ingredients = ingredients.replace("&#174;","®");
-                     ingredients = ingredients.replace("&amp","&");
+                     ingredients = ingredients.replace("&amp;","&");
                      
                      ingredients = ingredients.replace("\n", "");
                      ingredients = ingredients.replace(",", "");
+                     
+                     ingredients = ingredients.replace("&rsquo;","'");
+                     ingredients = ingredients.replace("&copy;","©");
+                     ingredients = ingredients.replace("&eacute;", "e");
+                     ingredients = ingredients.replace("&reg;","®");
+                     ingredients = ingredients.replace("&#8220;","“");
+                     ingredients = ingredients.replace("&#233;","e");
+                     ingredients = ingredients.replace("&#8217;", "’");
+                     ingredients = ingredients.replace("&#38;", "&");
+                     ingredients = ingredients.replace("&#8482;","™");
+                     ingredients = ingredients.replace("&#241;","ñ");
                   }  
                   //Checks if the line contains the keyword procedure
                   else if(line2.indexOf(keyProcedure) != -1)
@@ -309,15 +345,79 @@ public class ReadWebPage
                      procedure = procedure.replace("</il>","");
                      procedure = procedure.replace("</li>","");
                      procedure = procedure.replace("&#174;","®");
-                     procedure = procedure.replace("&amp","&");
+                     procedure = procedure.replace("&amp;","&");
                      
                      procedure = procedure.replace("\n", "");
                      procedure = procedure.replace(",", "");
+                     
+                     procedure = procedure.replace("&rsquo;","'");
+                     procedure = procedure.replace("&copy;","©");
+                     procedure = procedure.replace("&eacute;", "e");
+                     procedure = procedure.replace("&reg;","®");
+                     procedure = procedure.replace("&#8220;","“");
+                     procedure = procedure.replace("&#233;","e");
+                     procedure = procedure.replace("&#8217;", "’");
+                     procedure = procedure.replace("&#38;", "&");
+                     procedure = procedure.replace("&#8482;","™");
+                     procedure = procedure.replace("&#241;","ñ");
                   }
                }
                pw3.print(author + ",");
                for(int i = 0; i < path.size(); i++)
                {
+                     path.set(i, path.get(i).replace("&#189;",".5"));
+                     path.set(i, path.get(i).replace("&#188;",".25"));
+                     path.set(i, path.get(i).replace("&#8531;",".33"));
+                     path.set(i, path.get(i).replace("&#8532;",".66"));
+                     path.set(i, path.get(i).replace("&#190;",".75"));
+                          
+                     path.set(i, path.get(i).replace("<br>",""));
+                     path.set(i, path.get(i).replace("<b>",""));
+                     path.set(i, path.get(i).replace("<i>",""));
+                     path.set(i, path.get(i).replace("</i>",""));
+                     path.set(i, path.get(i).replace("</div>",""));
+                     path.set(i, path.get(i).replace("</b>",""));
+                     path.set(i, path.get(i).replace("&#8217;","'"));
+                     path.set(i, path.get(i).replace("&#233;","é"));
+                     path.set(i, path.get(i).replace("&#232;","è"));
+                     path.set(i, path.get(i).replace("&#224;","à"));
+                     path.set(i, path.get(i).replace("&#34;",""));
+                     path.set(i, path.get(i).replace("&#8539;",".125"));
+                     path.set(i, path.get(i).replace("<li>",""));
+                     path.set(i, path.get(i).replace("<il>",""));
+                     path.set(i, path.get(i).replace("<u>",""));
+                     path.set(i, path.get(i).replace("&nbsp;",""));
+                     path.set(i, path.get(i).replace("&#176;","°"));
+                     path.set(i, path.get(i).replace("&#45;","-"));
+                     path.set(i, path.get(i).replace("&deg;","°"));
+                     path.set(i, path.get(i).replace("&#8232;","\n"));
+                     path.set(i, path.get(i).replace("&#8212;","—"));
+                     path.set(i, path.get(i).replace("&#234;","ê"));
+                     path.set(i, path.get(i).replace("&#38;","&"));
+                     path.set(i, path.get(i).replace("&#238;","V"));
+                     path.set(i, path.get(i).replace("&#8211;","_"));
+                     path.set(i, path.get(i).replace("&#8211;","-"));
+                     path.set(i, path.get(i).replace("</ul>",""));
+                     path.set(i, path.get(i).replace("</il>",""));
+                     path.set(i, path.get(i).replace("</li>",""));
+                     path.set(i, path.get(i).replace("&#174;","®"));
+                     path.set(i, path.get(i).replace("&amp;","&"));
+                     
+                     path.set(i, path.get(i).replace("\n", ""));
+                     path.set(i, path.get(i).replace(",", ""));
+                     
+                      path.set(i, path.get(i).replace("&rsquo;","'"));
+                      path.set(i, path.get(i).replace("&copy;","©"));
+                      path.set(i, path.get(i).replace("&eacute;", "e"));
+                      path.set(i, path.get(i).replace("&reg;","®"));
+                      path.set(i, path.get(i).replace("&#8220;","“"));
+                      path.set(i, path.get(i).replace("&#233;","e"));
+                      path.set(i, path.get(i).replace("&#8217;", "’"));
+                      path.set(i, path.get(i).replace("&#38;", "&"));
+                      path.set(i, path.get(i).replace("&#8482;","™"));
+                      path.set(i, path.get(i).replace("&#241;","ñ"));
+                     
+
                   pw3.print(path.get(i) + "/");
                }
                pw3.print(","+title);
