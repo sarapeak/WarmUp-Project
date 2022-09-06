@@ -106,6 +106,44 @@ public class ReadWebPage
                   else if(line2.indexOf(authorKey) != -1)
                   {
                      author = s2.nextLine(); //save the author as a string variable
+                     
+                     author = author.replace("&#189;",".5");
+                     author = author.replace("&#188;",".25");
+                     author = author.replace("&#8531;",".33");
+                     author = author.replace("&#8532;",".66");
+                     author = author.replace("&#190;",".75");
+                          
+                     author = author.replace("<br>","");
+                     author = author.replace("<b>","");
+                     author = author.replace("<i>","");
+                     author = author.replace("</i>","");
+                     author = author.replace("</div>","");
+                     author = author.replace("</b>","");
+                     author = author.replace("&#8217;","'");
+                     author = author.replace("&#233;","é");
+                     author = author.replace("&#232;","è");
+                     author = author.replace("&#224;","à");
+                     author = author.replace("&#34;","");
+                     author = author.replace("&#8539;",".125");
+                     author = author.replace("<li>","");
+                     author = author.replace("<il>","");
+                     author = author.replace("<u>","");
+                     author = author.replace("&nbsp;","");
+                     author = author.replace("&#176;","°");
+                     author = author.replace("&#45;","-");
+                     author = author.replace("&deg;","°");
+                     author = author.replace("&#8232;","\n");
+                     author = author.replace("&#8212;","—");
+                     author = author.replace("&#234;","ê");
+                     author = author.replace("&#38;","&");
+                     author = author.replace("&#238;","V");
+                     author = author.replace("&#8211;","-");
+                     author = author.replace("</ul>","");
+                     author = author.replace("</il>","");
+                     author = author.replace("</li>","");
+                     author = author.replace("&#174;","®");
+                     author = author.replace("&amp","&");
+                     
                      author = author.replace("\n", "");
                      author = author.replace(",", "");
                   }
@@ -142,6 +180,24 @@ public class ReadWebPage
                      servings = servings.replace("&#224;","à");
                      servings = servings.replace("&#34;","");
                      servings = servings.replace("&#8539;",".125");
+                     servings = servings.replace("<li>","");
+                     servings = servings.replace("<il>","");
+                     servings = servings.replace("<u>","");
+                     servings = servings.replace("&nbsp;","");
+                     servings = servings.replace("&#176;","°");
+                     servings = servings.replace("&#45;","-");
+                     servings = servings.replace("&deg;","°");
+                     servings = servings.replace("&#8232;","\n");
+                     servings = servings.replace("&#8212;","—");
+                     servings = servings.replace("&#234;","ê");
+                     servings = servings.replace("&#38;","&");
+                     servings = servings.replace("&#238;","V");
+                     servings = servings.replace("&#8211;","-");
+                     servings = servings.replace("</ul>","");
+                     servings = servings.replace("</il>","");
+                     servings = servings.replace("</li>","");
+                     servings = servings.replace("&#174;","®");
+                     servings = servings.replace("&amp","&");
                      
                      servings = servings.replace("\n", "");
                      servings = servings.replace(",", "");
@@ -181,6 +237,24 @@ public class ReadWebPage
                      ingredients = ingredients.replace("&#224;","à");
                      ingredients = ingredients.replace("&#34;","");
                      ingredients = ingredients.replace("&#8539;",".125");
+                     ingredients = ingredients.replace("<li>","");
+                     ingredients = ingredients.replace("<il>","");
+                     ingredients = ingredients.replace("<u>","");
+                     ingredients = ingredients.replace("&nbsp;","");
+                     ingredients = ingredients.replace("&#176;","°");
+                     ingredients = ingredients.replace("&#45;","-");
+                     ingredients = ingredients.replace("&deg;","°");
+                     ingredients = ingredients.replace("&#8232;","\n");
+                     ingredients = ingredients.replace("&#8212;","—");
+                     ingredients = ingredients.replace("&#234;","ê");
+                     ingredients = ingredients.replace("&#38;","&");
+                     ingredients = ingredients.replace("&#238;","V");
+                     ingredients = ingredients.replace("&#8211;","-");
+                     ingredients = ingredients.replace("</ul>","");
+                     ingredients = ingredients.replace("</il>","");
+                     ingredients = ingredients.replace("</li>","");
+                     ingredients = ingredients.replace("&#174;","®");
+                     ingredients = ingredients.replace("&amp","&");
                      
                      ingredients = ingredients.replace("\n", "");
                      ingredients = ingredients.replace(",", "");
@@ -197,7 +271,6 @@ public class ReadWebPage
                      while(s2.hasNextLine() && procedure.indexOf("</div>") == -1)
                      {
                         procedure += s2.nextLine();   //Adds to the procedure string
-                        procedure += "\n";
                      }
                      
                      procedure = procedure.replace("&#189;",".5");
@@ -205,7 +278,7 @@ public class ReadWebPage
                      procedure = procedure.replace("&#8531;",".33");
                      procedure = procedure.replace("&#8532;",".66");
                      procedure = procedure.replace("&#190;",".75");
-                              
+                          
                      procedure = procedure.replace("<br>","");
                      procedure = procedure.replace("<b>","");
                      procedure = procedure.replace("<i>","");
@@ -218,6 +291,25 @@ public class ReadWebPage
                      procedure = procedure.replace("&#224;","à");
                      procedure = procedure.replace("&#34;","");
                      procedure = procedure.replace("&#8539;",".125");
+                     procedure = procedure.replace("<li>","");
+                     procedure = procedure.replace("<il>","");
+                     procedure = procedure.replace("<u>","");
+                     procedure = procedure.replace("&nbsp;","");
+                     procedure = procedure.replace("&#176;","°");
+                     procedure = procedure.replace("&#45;","-");
+                     procedure = procedure.replace("&deg;","°");
+                     procedure = procedure.replace("&#8232;","\n");
+                     procedure = procedure.replace("&#8212;","—");
+                     procedure = procedure.replace("&#234;","ê");
+                     procedure = procedure.replace("&#38;","&");
+                     procedure = procedure.replace("&#238;","V");
+                     procedure = procedure.replace("&#8211;","_");
+                     procedure = procedure.replace("&#8211;","-");
+                     procedure = procedure.replace("</ul>","");
+                     procedure = procedure.replace("</il>","");
+                     procedure = procedure.replace("</li>","");
+                     procedure = procedure.replace("&#174;","®");
+                     procedure = procedure.replace("&amp","&");
                      
                      procedure = procedure.replace("\n", "");
                      procedure = procedure.replace(",", "");
