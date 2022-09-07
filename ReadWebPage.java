@@ -24,7 +24,7 @@ public class ReadWebPage
       {
          //Requests desired URL
          HttpRequest request = HttpRequest.newBuilder()
-            .uri(URI.create("https://www.surlatable.com/recipes/?srule=best-matches&start="+Integer.toString(num)+"&sz=24")) //starting URLÖ
+            .uri(URI.create("https://www.surlatable.com/recipes/?srule=best-matches&start="+Integer.toString(num)+"&sz=24")) //starting URL‚Ä¶
             .GET() // GET is default
             .build();
          
@@ -69,13 +69,13 @@ public class ReadWebPage
                //open up that file and save it to a new one
                HttpClient client2 = HttpClient.newHttpClient();
                HttpRequest request2 = HttpRequest.newBuilder()
-                  .uri(URI.create(link)) //starting URLÖ
+                  .uri(URI.create(link)) //starting URL‚Ä¶
                   .GET() // GET is default
                   .build();
 
                HttpResponse<String> response2 = client2.send(request2,HttpResponse.BodyHandlers.ofString());
                
-               //output to a file so its easy to mess with (you wonít be for your finished program)
+               //output to a file so its easy to mess with (you won‚Äôt be for your finished program)
                FileOutputStream fs2 = new FileOutputStream("outputmenuspecific.txt");
                PrintWriter pw2 = new PrintWriter(fs2);
                pw2.println(response2.body());
@@ -121,42 +121,42 @@ public class ReadWebPage
                      title = title.replace("</div>","");
                      title = title.replace("</b>","");
                      title = title.replace("&#8217;","'");
-                     title = title.replace("&#233;","È");
-                     title = title.replace("&#232;","Ë");
-                     title = title.replace("&#224;","‡");
+                     title = title.replace("&#233;","√©");
+                     title = title.replace("&#232;","√®");
+                     title = title.replace("&#224;","√†");
                      title = title.replace("&#34;","");
                      title = title.replace("&#8539;",".125");
                      title = title.replace("<li>","");
                      title = title.replace("<il>","");
                      title = title.replace("<u>","");
                      title = title.replace("&nbsp;","");
-                     title = title.replace("&#176;","∞");
+                     title = title.replace("&#176;","¬∞");
                      title = title.replace("&#45;","-");
-                     title = title.replace("&deg;","∞");
+                     title = title.replace("&deg;","¬∞");
                      title = title.replace("&#8232;","\n");
-                     title = title.replace("&#8212;","ó");
-                     title = title.replace("&#234;","Í");
+                     title = title.replace("&#8212;","‚Äî");
+                     title = title.replace("&#234;","√™");
                      title = title.replace("&#38;","&");
                      title = title.replace("&#238;","V");
                      title = title.replace("&#8211;","-");
                      title = title.replace("</ul>","");
                      title = title.replace("</il>","");
                      title = title.replace("</li>","");
-                     title = title.replace("&#174;","Æ");
+                     title = title.replace("&#174;","¬Æ");
                      title = title.replace("&amp","&");
                      
                      title = title.replace("&;","&");
                      title = title.replace("&rsquo;","'");
-                     title = title.replace("&copy;","©");
-                     title = title.replace("&eacute;", "È");
-                     title = title.replace("&reg;","Æ");
-                     title = title.replace("&#8220;","ì");
+                     title = title.replace("&copy;","¬©");
+                     title = title.replace("&eacute;", "√©");
+                     title = title.replace("&reg;","¬Æ");
+                     title = title.replace("&#8220;","‚Äú");
                      title = title.replace("&#233;","e");
-                     title = title.replace("&#8217;", "í");
+                     title = title.replace("&#8217;", "‚Äô");
                      title = title.replace("&#38;", "&");
-                     title = title.replace("&#8482;","ô");
-                     title = title.replace("&#241;","Ò");
-                     title = title.replace("&#8221;","î");
+                     title = title.replace("&#8482;","‚Ñ¢");
+                     title = title.replace("&#241;","√±");
+                     title = title.replace("&#8221;","‚Äù");
                      
                      title = title.replace("\n", " ");
                      title = title.replace(",", " ");
@@ -180,42 +180,42 @@ public class ReadWebPage
                      author = author.replace("</div>","");
                      author = author.replace("</b>","");
                      author = author.replace("&#8217;","'");
-                     author = author.replace("&#233;","È");
-                     author = author.replace("&#232;","Ë");
-                     author = author.replace("&#224;","‡");
+                     author = author.replace("&#233;","√©");
+                     author = author.replace("&#232;","√®");
+                     author = author.replace("&#224;","√†");
                      author = author.replace("&#34;","");
                      author = author.replace("&#8539;",".125");
                      author = author.replace("<li>","");
                      author = author.replace("<il>","");
                      author = author.replace("<u>","");
                      author = author.replace("&nbsp;","");
-                     author = author.replace("&#176;","∞");
+                     author = author.replace("&#176;","¬∞");
                      author = author.replace("&#45;","-");
-                     author = author.replace("&deg;","∞");
+                     author = author.replace("&deg;","¬∞");
                      author = author.replace("&#8232;","\n");
-                     author = author.replace("&#8212;","ó");
-                     author = author.replace("&#234;","Í");
+                     author = author.replace("&#8212;","‚Äî");
+                     author = author.replace("&#234;","√™");
                      author = author.replace("&#38;","&");
                      author = author.replace("&#238;","V");
                      author = author.replace("&#8211;","-");
                      author = author.replace("</ul>","");
                      author = author.replace("</il>","");
                      author = author.replace("</li>","");
-                     author = author.replace("&#174;","Æ");
+                     author = author.replace("&#174;","¬Æ");
                      author = author.replace("&amp","&");
                      
                      author = author.replace("&;","&");
                      author = author.replace("&rsquo;","'");
-                     author = author.replace("&copy;","©");
-                     author = author.replace("&eacute;", "È");
-                     author = author.replace("&reg;","Æ");
-                     author = author.replace("&#8220;","ì");
+                     author = author.replace("&copy;","¬©");
+                     author = author.replace("&eacute;", "√©");
+                     author = author.replace("&reg;","¬Æ");
+                     author = author.replace("&#8220;","‚Äú");
                      author = author.replace("&#233;","e");
-                     author = author.replace("&#8217;", "í");
+                     author = author.replace("&#8217;", "‚Äô");
                      author = author.replace("&#38;", "&");
-                     author = author.replace("&#8482;","ô");
-                     author = author.replace("&#241;","Ò");
-                     author = author.replace("&#8221;","î");
+                     author = author.replace("&#8482;","‚Ñ¢");
+                     author = author.replace("&#241;","√±");
+                     author = author.replace("&#8221;","‚Äù");
                      
                      author = author.replace("\n", " ");
                      author = author.replace(",", " ");
@@ -250,42 +250,42 @@ public class ReadWebPage
                      servings = servings.replace("</div>","");
                      servings = servings.replace("</b>","");
                      servings = servings.replace("&#8217;","'");
-                     servings = servings.replace("&#233;","È");
-                     servings = servings.replace("&#232;","Ë");
-                     servings = servings.replace("&#224;","‡");
+                     servings = servings.replace("&#233;","√©");
+                     servings = servings.replace("&#232;","√®");
+                     servings = servings.replace("&#224;","√†");
                      servings = servings.replace("&#34;","");
                      servings = servings.replace("&#8539;",".125");
                      servings = servings.replace("<li>","");
                      servings = servings.replace("<il>","");
                      servings = servings.replace("<u>","");
                      servings = servings.replace("&nbsp;","");
-                     servings = servings.replace("&#176;","∞");
+                     servings = servings.replace("&#176;","¬∞");
                      servings = servings.replace("&#45;","-");
-                     servings = servings.replace("&deg;","∞");
+                     servings = servings.replace("&deg;","¬∞");
                      servings = servings.replace("&#8232;","\n");
-                     servings = servings.replace("&#8212;","ó");
-                     servings = servings.replace("&#234;","Í");
+                     servings = servings.replace("&#8212;","‚Äî");
+                     servings = servings.replace("&#234;","√™");
                      servings = servings.replace("&#38;","&");
                      servings = servings.replace("&#238;","V");
                      servings = servings.replace("&#8211;","-");
                      servings = servings.replace("</ul>","");
                      servings = servings.replace("</il>","");
                      servings = servings.replace("</li>","");
-                     servings = servings.replace("&#174;","Æ");
+                     servings = servings.replace("&#174;","¬Æ");
                      servings = servings.replace("&amp","&");
                      
                      servings = servings.replace("&;","&");
                      servings = servings.replace("&rsquo;","'");
-                     servings = servings.replace("&copy;","©");
-                     servings = servings.replace("&eacute;", "È");
-                     servings = servings.replace("&reg;","Æ");
-                     servings = servings.replace("&#8220;","ì");
+                     servings = servings.replace("&copy;","¬©");
+                     servings = servings.replace("&eacute;", "√©");
+                     servings = servings.replace("&reg;","¬Æ");
+                     servings = servings.replace("&#8220;","‚Äú");
                      servings = servings.replace("&#233;","e");
-                     servings = servings.replace("&#8217;", "í");
+                     servings = servings.replace("&#8217;", "‚Äô");
                      servings = servings.replace("&#38;", "&");
-                     servings = servings.replace("&#8482;","ô");
-                     servings = servings.replace("&#241;","Ò");
-                     servings = servings.replace("&#8221;","î");
+                     servings = servings.replace("&#8482;","‚Ñ¢");
+                     servings = servings.replace("&#241;","√±");
+                     servings = servings.replace("&#8221;","‚Äù");
                      
                      servings = servings.replace("\n", " ");
                      servings = servings.replace(",", " ");
@@ -301,7 +301,12 @@ public class ReadWebPage
                         //lbm = line before modification
              
                         int lstop = thenextline.indexOf("</li>");
-                        if (lstop != -1)
+                        int lstop2 = thenextline.indexOf("<a href");
+                        //int badline = thenextline.indexOf(extlink);
+                        if (lstop2 != -1)
+                           ingredients += thenextline.substring(4,lstop2);
+
+                        else if (lstop != -1)
                            ingredients += thenextline.substring(4,lstop);
                         thenextline = s2.nextLine();
                      }
@@ -320,42 +325,42 @@ public class ReadWebPage
                      ingredients = ingredients.replace("</div>","");
                      ingredients = ingredients.replace("</b>","");
                      ingredients = ingredients.replace("&#8217;","'");
-                     ingredients = ingredients.replace("&#233;","È");
-                     ingredients = ingredients.replace("&#232;","Ë");
-                     ingredients = ingredients.replace("&#224;","‡");
+                     ingredients = ingredients.replace("&#233;","√©");
+                     ingredients = ingredients.replace("&#232;","√®");
+                     ingredients = ingredients.replace("&#224;","√†");
                      ingredients = ingredients.replace("&#34;","");
                      ingredients = ingredients.replace("&#8539;",".125");
                      ingredients = ingredients.replace("<li>","");
                      ingredients = ingredients.replace("<il>","");
                      ingredients = ingredients.replace("<u>","");
                      ingredients = ingredients.replace("&nbsp;","");
-                     ingredients = ingredients.replace("&#176;","∞");
+                     ingredients = ingredients.replace("&#176;","¬∞");
                      ingredients = ingredients.replace("&#45;","-");
-                     ingredients = ingredients.replace("&deg;","∞");
+                     ingredients = ingredients.replace("&deg;","¬∞");
                      ingredients = ingredients.replace("&#8232;","\n");
-                     ingredients = ingredients.replace("&#8212;","ó");
-                     ingredients = ingredients.replace("&#234;","Í");
+                     ingredients = ingredients.replace("&#8212;","‚Äî");
+                     ingredients = ingredients.replace("&#234;","√™");
                      ingredients = ingredients.replace("&#38;","&");
                      ingredients = ingredients.replace("&#238;","V");
                      ingredients = ingredients.replace("&#8211;","-");
                      ingredients = ingredients.replace("</ul>","");
                      ingredients = ingredients.replace("</il>","");
                      ingredients = ingredients.replace("</li>","");
-                     ingredients = ingredients.replace("&#174;","Æ");
+                     ingredients = ingredients.replace("&#174;","¬Æ");
                      ingredients = ingredients.replace("&amp","&");
                      
                      ingredients = ingredients.replace("&;","&");
                      ingredients = ingredients.replace("&rsquo;","'");
-                     ingredients = ingredients.replace("&copy;","©");
-                     ingredients = ingredients.replace("&eacute;", "È");
-                     ingredients = ingredients.replace("&reg;","Æ");
-                     ingredients = ingredients.replace("&#8220;","ì");
+                     ingredients = ingredients.replace("&copy;","¬©");
+                     ingredients = ingredients.replace("&eacute;", "√©");
+                     ingredients = ingredients.replace("&reg;","¬Æ");
+                     ingredients = ingredients.replace("&#8220;","‚Äú");
                      ingredients = ingredients.replace("&#233;","e");
-                     ingredients = ingredients.replace("&#8217;", "í");
+                     ingredients = ingredients.replace("&#8217;", "‚Äô");
                      ingredients = ingredients.replace("&#38;", "&");
-                     ingredients = ingredients.replace("&#8482;","ô");
-                     ingredients = ingredients.replace("&#241;","Ò");
-                     ingredients = ingredients.replace("&#8221;","î");
+                     ingredients = ingredients.replace("&#8482;","‚Ñ¢");
+                     ingredients = ingredients.replace("&#241;","√±");
+                     ingredients = ingredients.replace("&#8221;","‚Äù");
                      
                      ingredients = ingredients.replace("\n", " ");
                      ingredients = ingredients.replace(",", " ");
@@ -388,21 +393,21 @@ public class ReadWebPage
                      procedure = procedure.replace("</div>","");
                      procedure = procedure.replace("</b>","");
                      procedure = procedure.replace("&#8217;","'");
-                     procedure = procedure.replace("&#233;","È");
-                     procedure = procedure.replace("&#232;","Ë");
-                     procedure = procedure.replace("&#224;","‡");
+                     procedure = procedure.replace("&#233;","√©");
+                     procedure = procedure.replace("&#232;","√®");
+                     procedure = procedure.replace("&#224;","√†");
                      procedure = procedure.replace("&#34;","");
                      procedure = procedure.replace("&#8539;",".125");
                      procedure = procedure.replace("<li>","");
                      procedure = procedure.replace("<il>","");
                      procedure = procedure.replace("<u>","");
                      procedure = procedure.replace("&nbsp;","");
-                     procedure = procedure.replace("&#176;","∞");
+                     procedure = procedure.replace("&#176;","¬∞");
                      procedure = procedure.replace("&#45;","-");
-                     procedure = procedure.replace("&deg;","∞");
+                     procedure = procedure.replace("&deg;","¬∞");
                      procedure = procedure.replace("&#8232;","\n");
-                     procedure = procedure.replace("&#8212;","ó");
-                     procedure = procedure.replace("&#234;","Í");
+                     procedure = procedure.replace("&#8212;","‚Äî");
+                     procedure = procedure.replace("&#234;","√™");
                      procedure = procedure.replace("&#38;","&");
                      procedure = procedure.replace("&#238;","V");
                      procedure = procedure.replace("&#8211;","_");
@@ -410,21 +415,21 @@ public class ReadWebPage
                      procedure = procedure.replace("</ul>","");
                      procedure = procedure.replace("</il>","");
                      procedure = procedure.replace("</li>","");
-                     procedure = procedure.replace("&#174;","Æ");
+                     procedure = procedure.replace("&#174;","¬Æ");
                      procedure = procedure.replace("&amp","&");
                      
                      procedure = procedure.replace("&;","&");
                      procedure = procedure.replace("&rsquo;","'");
-                     procedure = procedure.replace("&copy;","©");
-                     procedure = procedure.replace("&eacute;", "È");
-                     procedure = procedure.replace("&reg;","Æ");
-                     procedure = procedure.replace("&#8220;","ì");
+                     procedure = procedure.replace("&copy;","¬©");
+                     procedure = procedure.replace("&eacute;", "√©");
+                     procedure = procedure.replace("&reg;","¬Æ");
+                     procedure = procedure.replace("&#8220;","‚Äú");
                      procedure = procedure.replace("&#233;","e");
-                     procedure = procedure.replace("&#8217;", "í");
+                     procedure = procedure.replace("&#8217;", "‚Äô");
                      procedure = procedure.replace("&#38;", "&");
-                     procedure = procedure.replace("&#8482;","ô");
-                     procedure = procedure.replace("&#241;","Ò");
-                     procedure = procedure.replace("&#8221;","î");
+                     procedure = procedure.replace("&#8482;","‚Ñ¢");
+                     procedure = procedure.replace("&#241;","√±");
+                     procedure = procedure.replace("&#8221;","‚Äù");
                      
                      procedure = procedure.replace("\n", " ");
                      procedure = procedure.replace(",", " ");
@@ -448,21 +453,21 @@ public class ReadWebPage
                   path.set(i, path.get(i).replace("</div>",""));
                   path.set(i, path.get(i).replace("</b>",""));
                   path.set(i, path.get(i).replace("&#8217;","'"));
-                  path.set(i, path.get(i).replace("&#233;","È"));
-                  path.set(i, path.get(i).replace("&#232;","Ë"));
-                  path.set(i, path.get(i).replace("&#224;","‡"));
+                  path.set(i, path.get(i).replace("&#233;","√©"));
+                  path.set(i, path.get(i).replace("&#232;","√®"));
+                  path.set(i, path.get(i).replace("&#224;","√†"));
                   path.set(i, path.get(i).replace("&#34;",""));
                   path.set(i, path.get(i).replace("&#8539;",".125"));
                   path.set(i, path.get(i).replace("<li>",""));
                   path.set(i, path.get(i).replace("<il>",""));
                   path.set(i, path.get(i).replace("<u>",""));
                   path.set(i, path.get(i).replace("&nbsp;",""));
-                  path.set(i, path.get(i).replace("&#176;","∞"));
+                  path.set(i, path.get(i).replace("&#176;","¬∞"));
                   path.set(i, path.get(i).replace("&#45;","-"));
-                  path.set(i, path.get(i).replace("&deg;","∞"));
+                  path.set(i, path.get(i).replace("&deg;","¬∞"));
                   path.set(i, path.get(i).replace("&#8232;","\n"));
-                  path.set(i, path.get(i).replace("&#8212;","ó"));
-                  path.set(i, path.get(i).replace("&#234;","Í"));
+                  path.set(i, path.get(i).replace("&#8212;","‚Äî"));
+                  path.set(i, path.get(i).replace("&#234;","√™"));
                   path.set(i, path.get(i).replace("&#38;","&"));
                   path.set(i, path.get(i).replace("&#238;","V"));
                   path.set(i, path.get(i).replace("&#8211;","_"));
@@ -470,20 +475,20 @@ public class ReadWebPage
                   path.set(i, path.get(i).replace("</ul>",""));
                   path.set(i, path.get(i).replace("</il>",""));
                   path.set(i, path.get(i).replace("</li>",""));
-                  path.set(i, path.get(i).replace("&#174;","Æ"));
+                  path.set(i, path.get(i).replace("&#174;","¬Æ"));
                   path.set(i, path.get(i).replace("&amp;","&"));
                   
                   path.set(i, path.get(i).replace("&rsquo;","'"));
-                  path.set(i, path.get(i).replace("&copy;","©"));
+                  path.set(i, path.get(i).replace("&copy;","¬©"));
                   path.set(i, path.get(i).replace("&eacute;", "e"));
-                  path.set(i, path.get(i).replace("&reg;","Æ"));
-                  path.set(i, path.get(i).replace("&#8220;","ì"));
+                  path.set(i, path.get(i).replace("&reg;","¬Æ"));
+                  path.set(i, path.get(i).replace("&#8220;","‚Äú"));
                   path.set(i, path.get(i).replace("&#233;","e"));
-                  path.set(i, path.get(i).replace("&#8217;", "í"));
+                  path.set(i, path.get(i).replace("&#8217;", "‚Äô"));
                   path.set(i, path.get(i).replace("&#38;", "&"));
-                  path.set(i, path.get(i).replace("&#8482;","ô"));
-                  path.set(i, path.get(i).replace("&#241;","Ò"));
-                  path.set(i, path.get(i).replace("&#8221;","î"));
+                  path.set(i, path.get(i).replace("&#8482;","‚Ñ¢"));
+                  path.set(i, path.get(i).replace("&#241;","√±"));
+                  path.set(i, path.get(i).replace("&#8221;","‚Äù"));
                   
                   path.set(i, path.get(i).replace("\n", " "));
                   path.set(i, path.get(i).replace(",", " "));
